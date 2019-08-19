@@ -1,0 +1,29 @@
+{
+  "name": "bajzany/api-client",
+  "type": "extensions",
+  "description": "Api client for Nette Framework",
+  "keywords": ["apiClient"],
+  "homepage": "https://github.com/bajzany/api-client",
+  "license": [],
+  "authors": [
+    {
+      "name": "Radek Zíka",
+      "homepage": "http://dipcom.cz",
+      "email": "radek.zika@dipcom.cz"
+    }
+  ],
+  "support": {
+    "email": "radek.zika@dipcom.cz",
+    "issues": "https://github.com/bajzany/api-client"
+  },
+  "require": {
+    "php": "^7.2",
+    "nette/di": "^2.4",
+    "nette/application": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bajzany\\ApiClient\\": "src/"
+    }
+  }
+}
