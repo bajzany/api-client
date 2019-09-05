@@ -5,9 +5,9 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient;
+namespace Bajzany\ApiClient;
 
-use ApiClient\Model\EndPoint;
+use Bajzany\ApiClient\Model\EndPoint;
 use GuzzleHttp\Exception\BadResponseException;
 use Nette\SmartObject;
 use Psr\Http\Message\ResponseInterface;

@@ -5,11 +5,11 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient\Example;
+namespace Bajzany\ApiClient\Example;
 
-use ApiClient\Model\EndPoint;
-use ApiClient\Provider;
-use ApiClient\Response;
+use Bajzany\ApiClient\Model\EndPoint;
+use Bajzany\ApiClient\Provider;
+use Bajzany\ApiClient\Response;
 
 class UpdateUserApi extends EndPoint
 {

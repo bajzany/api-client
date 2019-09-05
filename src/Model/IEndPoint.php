@@ -5,10 +5,10 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient\Model;
+namespace Bajzany\ApiClient\Model;
 
-use ApiClient\Header;
-use ApiClient\Provider;
+use Bajzany\ApiClient\Header;
+use Bajzany\ApiClient\Provider;
 
 interface IEndPoint
 {

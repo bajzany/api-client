@@ -11,22 +11,22 @@ composer require bajzany/api-client dev-master
 
 ````neon
 extensions:
-	ApiClientExtension: ApiClient\DI\ApiClientExtension
+	ApiClientExtension: Bajzany\ApiClient\DI\ApiClientExtension
 ````
  	
  	
 #### How to use
 
-- first create api request action class witch extended `ApiClient\Model\EndPoint` like `ApiClient\Example\UpdateUserApi`
+- first create api request action class witch extended `Bajzany\ApiClient\Model\EndPoint` like `Bajzany\ApiClient\Example\UpdateUserApi`
 
 	````php
 	<?php
     
-    namespace ApiClient\Example;
+    namespace Bajzany\ApiClient\Example;
     
-    use ApiClient\Model\EndPoint;
-    use ApiClient\Provider;
-    use ApiClient\Response;
+    use Bajzany\ApiClient\Model\EndPoint;
+    use Bajzany\ApiClient\Provider;
+    use Bajzany\ApiClient\Response;
     
     class UpdateUserApi extends EndPoint
     {
@@ -84,7 +84,7 @@ extensions:
 	- function processRawRequest pass into request body data
 	- function execute can be replace own execute events
 	
-- For run this action must be injected service `ApiClient\Provider`
+- For run this action must be injected service `Bajzany\ApiClient\Provider`
 	````php
 	/** @var Provider @inject */
 	public $provider;

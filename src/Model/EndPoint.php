@@ -5,12 +5,12 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient\Model;
+namespace Bajzany\ApiClient\Model;
 
-use ApiClient\Header;
-use ApiClient\Provider;
-use ApiClient\Request;
-use ApiClient\Response;
+use Bajzany\ApiClient\Header;
+use Bajzany\ApiClient\Provider;
+use Bajzany\ApiClient\Request;
+use Bajzany\ApiClient\Response;
 
 abstract class EndPoint implements IEndPoint
 {

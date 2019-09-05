@@ -5,7 +5,7 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient;
+namespace Bajzany\ApiClient;
 
 class Header
 {

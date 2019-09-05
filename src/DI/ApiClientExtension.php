@@ -5,9 +5,9 @@
  * Email: radek.zika@dipcom.cz
  */
 
-namespace ApiClient\DI;
+namespace Bajzany\ApiClient\DI;
 
-use ApiClient\Provider;
+use Bajzany\ApiClient\Provider;
 use Nette\Configurator;
 use Nette\DI\Compiler;
 use Nette\DI\CompilerExtension;
