@@ -7,6 +7,10 @@
 
 namespace Bajzany\ApiClient;
 
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
+use JMS\Serializer\SerializerBuilder;
+
 class Request extends \GuzzleHttp\Psr7\Request
 {
 
@@ -19,7 +23,22 @@ class Request extends \GuzzleHttp\Psr7\Request
 	 */
 	public function __construct(string $method, $uri, Header $header, array $body, string $version = '1.1')
 	{
-		parent::__construct($method, $uri, $header->getParameters(), json_encode($body), $version);
+		parent::__construct($method, $uri, $header->getParameters(), $this->createJson($body), $version);
+	}
+
+	/**
+	 * @param $content
+	 * @return false|string
+	 */
+	private function createJson($content)
+	{
+		$serializer = SerializerBuilder::create()
+			->setPropertyNamingStrategy(new SerializedNameAnnotationStrategy(new IdenticalPropertyNamingStrategy()))
+			->build();
+
+		$jsonContent = $serializer->serialize($content, 'json');
+
+		return $jsonContent;
 	}
 
 }
