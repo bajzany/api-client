@@ -41,8 +41,14 @@ class Provider
 	 */
 	private $client;
 
-	public function __construct()
+	/**
+	 * @var array
+	 */
+	private $config;
+
+	public function __construct(array $config)
 	{
+		$this->config = $config;
 		$this->client = new \GuzzleHttp\Client();
 	}
 
@@ -63,7 +69,7 @@ class Provider
 	 */
 	protected function getResponse(Request $request)
 	{
-		return $this->client->send($request);
+		return $this->client->send($request, $this->config);
 	}
 
 	/**

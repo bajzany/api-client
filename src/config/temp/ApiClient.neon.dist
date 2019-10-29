@@ -1,0 +1,5 @@
+extensions:
+	ApiClientExtension: Bajzany\ApiClient\DI\ApiClientExtension
+
+ApiClientExtension:
+	verify: TRUE

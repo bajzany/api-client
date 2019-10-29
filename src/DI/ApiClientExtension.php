@@ -14,12 +14,18 @@ use Nette\DI\CompilerExtension;
 
 class ApiClientExtension extends CompilerExtension
 {
+
+	private $defaults = [
+		'verify' => FALSE,
+	];
+
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
-		$builder->addDefinition($this->prefix('provider'))
+		$config = $this->validateConfig($this->defaults);
+		$builder->addDefinition($this->prefix('bajzanyProvider'))
 			->setInject(TRUE)
-			->setFactory(Provider::class);
+			->setFactory(Provider::class, [$config]);
 	}
 
 	/**

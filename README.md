@@ -12,8 +12,12 @@ composer require bajzany/api-client dev-master
 ````neon
 extensions:
 	ApiClientExtension: Bajzany\ApiClient\DI\ApiClientExtension
+	
+ApiClientExtension: 
+	verify: TRUE
 ````
- 	
+
+- verify = enable validate certificate
  	
 #### How to use
 
