@@ -17,6 +17,7 @@ class ApiClientExtension extends CompilerExtension
 
 	private $defaults = [
 		'verify' => FALSE,
+		'connect_timeout' => 3.14
 	];
 
 	public function loadConfiguration()

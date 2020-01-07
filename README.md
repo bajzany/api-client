@@ -15,9 +15,11 @@ extensions:
 	
 ApiClientExtension: 
 	verify: TRUE
+	connect_timeout: 3.14
 ````
 
 - verify = enable validate certificate
+- Float describing the number of seconds to wait while trying to connect to a server. Use 0 to wait indefinitely (the default behavior).
  	
 #### How to use
 

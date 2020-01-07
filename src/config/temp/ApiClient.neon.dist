@@ -3,3 +3,4 @@ extensions:
 
 ApiClientExtension:
 	verify: TRUE
+	connect_timeout: 3.14
