@@ -9,6 +9,7 @@ namespace Bajzany\ApiClient;
 
 use Bajzany\ApiClient\Model\EndPoint;
 use GuzzleHttp\Exception\BadResponseException;
+use function GuzzleHttp\Psr7\str;
 use Nette\SmartObject;
 use Psr\Http\Message\ResponseInterface;
 
@@ -81,6 +82,10 @@ class Provider
 	{
 		try {
 			$response = $this->getResponse($request);
+//
+//			var_dump($response);
+//			exit;
+
 		} catch (BadResponseException $e) {
 			$response = $e->getResponse();
 		}
@@ -96,8 +101,10 @@ class Provider
 	protected function parseResponse(ResponseInterface $response)
 	{
 		$content = (string) $response->getBody();
+		if (empty($content)) {
+			$content = (string)$response->getBody()->getContents();
+		}
 		$type = $this->getContentType($response);
-
 		if (strpos($type, 'urlencoded') !== false) {
 			parse_str($content, $parsed);
 			return $parsed;

@@ -3,4 +3,7 @@ extensions:
 
 ApiClientExtension:
 	verify: TRUE
-	connect_timeout: 3.14
+	stream: TRUE
+	connect_timeout: 20
+	read_timeout: 20
+	timeout: 20

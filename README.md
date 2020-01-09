@@ -15,12 +15,17 @@ extensions:
 	
 ApiClientExtension: 
 	verify: TRUE
-	connect_timeout: 3.14
+	stream: TRUE
+	connect_timeout: 20
+	read_timeout: 20
+	timeout: 20
 ````
 
 - verify = enable validate certificate
-- Float describing the number of seconds to wait while trying to connect to a server. Use 0 to wait indefinitely (the default behavior).
- 	
+- connect_timeout = Float describing the number of seconds to wait while trying to connect to a server. Use 0 to wait indefinitely (the default behavior).
+- timeout = Timeout if a server does not return a response
+- read_timeout = The timeout applies to individual read operations on a streamed body (when the stream option is enabled).
+
 #### How to use
 
 - first create api request action class witch extended `Bajzany\ApiClient\Model\EndPoint` like `Bajzany\ApiClient\Example\UpdateUserApi`
